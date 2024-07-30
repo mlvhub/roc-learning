@@ -14,8 +14,8 @@ main =
             host: "localhost",
             port: 5432,
             user: "postgres",
-            auth: Password "postgres",
-            database: "grokkr",
+            auth: None,
+            database: "postgres",
         }
 
     Stdout.line! "Connected!"
@@ -23,16 +23,21 @@ main =
     rows =
         Pg.Cmd.new
             """
-            select id, name from grokkr.books
+            select $1 as name, $2 as age
+            union all
+            select 'Julio' as name, 23 as age
             """
+            |> Pg.Cmd.bind [Pg.Cmd.str "John", Pg.Cmd.u8 32]
             |> Pg.Cmd.expectN
                 (
                     Pg.Result.succeed
-                        (\id -> \name ->
-                                "$(id): $(name)"
+                        (\name -> \age ->
+                                ageStr = Num.toStr age
+
+                                "$(name): $(ageStr)"
                         )
-                    |> Pg.Result.with (Pg.Result.str "id")
                     |> Pg.Result.with (Pg.Result.str "name")
+                    |> Pg.Result.with (Pg.Result.u8 "age")
                 )
             |> Pg.BasicCliClient.command! client
 
