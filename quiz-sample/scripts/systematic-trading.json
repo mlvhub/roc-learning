@@ -1,0 +1,575 @@
+{
+  "name": "Systematic Trading",
+  "chapters": [
+    {
+      "name": "2. Systematic Trading Rules",
+      "quizzes": [
+        {
+          "name": "Sample Quiz 1 - Claude-3.5-Sonnet",
+          "questions": [
+            {
+              "question": "What are the two main approaches to creating trading rules mentioned in the chapter?",
+              "correctAnswer": "Data first (or data mining) and ideas first",
+              "incorrectAnswers": [
+                "Technical analysis and fundamental analysis",
+                "Momentum trading and mean reversion",
+                "High-frequency trading and long-term investing"
+              ]
+            },
+            {
+              "question": "Which approach does the author favor for creating trading rules, and why?",
+              "correctAnswer": "Ideas first, because the trading rules tend to be simpler and easier to understand",
+              "incorrectAnswers": [
+                "Data first, because it allows for more complex strategies",
+                "Ideas first, because it always produces higher returns",
+                "Data first, because it eliminates human bias"
+              ]
+            },
+            {
+              "question": "Why is it important to understand why a trading rule was profitable in the past?",
+              "correctAnswer": "It allows you to understand whether it can be profitable in the future or not",
+              "incorrectAnswers": [
+                "It helps you predict market movements",
+                "It's not important, only future performance matters",
+                "It allows you to replicate past market conditions"
+              ]
+            },
+            {
+              "question": "What is meant by 'overfitting' in the context of trading rules?",
+              "correctAnswer": "When a rule is too closely fitted to past data and may not perform well on new, unseen data",
+              "incorrectAnswers": [
+                "When a trading rule is too complex to implement",
+                "When a rule generates too many trades",
+                "When a rule only works in specific market conditions"
+              ]
+            },
+            {
+              "question": "What is 'data snooping' and why is it problematic?",
+              "correctAnswer": "Using forward-looking data that wouldn't have been available at the actual time of trading, leading to unrealistic backtesting results",
+              "incorrectAnswers": [
+                "Analyzing too much data, leading to analysis paralysis",
+                "Using outdated data, resulting in poor trading decisions",
+                "Relying solely on price data, ignoring fundamental factors"
+              ]
+            },
+            {
+              "question": "How can the dominance of systematic traders in a market affect relative value strategies?",
+              "correctAnswer": "A large population of similar systems will immediately correct any mispricing, potentially reducing opportunities",
+              "incorrectAnswers": [
+                "It increases the effectiveness of relative value strategies",
+                "It has no effect on relative value strategies",
+                "It causes more frequent market crashes"
+              ]
+            },
+            {
+              "question": "What is a 'risk premium' in financial markets?",
+              "correctAnswer": "The additional return an investor can expect to receive for taking on additional risk",
+              "incorrectAnswers": [
+                "The cost of insurance against market volatility",
+                "The minimum return required by investors",
+                "The difference between bid and ask prices"
+              ]
+            },
+            {
+              "question": "Explain the concept of 'skew' in asset returns.",
+              "correctAnswer": "Asymmetry in the distribution of returns, with positive skew meaning more frequent small losses with occasional large gains, and negative skew meaning frequent small gains with occasional large losses",
+              "incorrectAnswers": [
+                "The tendency for asset prices to move in a particular direction",
+                "The difference between expected and actual returns",
+                "The correlation between different asset classes"
+              ]
+            },
+            {
+              "question": "Why do larger institutional investors prefer liquid assets?",
+              "correctAnswer": "They need to buy assets in large size and liquidate quickly on client redemptions",
+              "incorrectAnswers": [
+                "Liquid assets always provide higher returns",
+                "Regulators require them to hold only liquid assets",
+                "Liquid assets are less risky than illiquid ones"
+              ]
+            },
+            {
+              "question": "Give an example of a situation where some market participants 'have to trade' regardless of profit motives.",
+              "correctAnswer": "Central banks wishing to keep their currency weak, like Switzerland or Japan",
+              "incorrectAnswers": [
+                "Day traders closing positions at the end of each day",
+                "Mutual funds rebalancing their portfolios quarterly",
+                "Retail investors buying stocks for their retirement accounts"
+              ]
+            },
+            {
+              "question": "What are some barriers to entry for high-frequency trading strategies?",
+              "correctAnswer": "High costs, including renting expensive servers located physically within exchange buildings and developing specialized software",
+              "incorrectAnswers": [
+                "Lack of historical data for backtesting",
+                "Regulatory restrictions on trading frequency",
+                "Limited availability of trading algorithms"
+              ]
+            },
+            {
+              "question": "What is meant by a 'self-fulfilling prophecy' in technical trading systems?",
+              "correctAnswer": "When many traders use the same technical indicators, it can create persistent price movements around key levels, making the indicators work even if they lack fundamental justification",
+              "incorrectAnswers": [
+                "When traders' beliefs about the market always come true",
+                "When technical indicators accurately predict future price movements",
+                "When market manipulation causes prices to move in a desired direction"
+              ]
+            },
+            {
+              "question": "Describe the difference between static and dynamic trading strategies.",
+              "correctAnswer": "Static strategies involve investing and holding, while dynamic strategies involve active trading based on rules or signals",
+              "incorrectAnswers": [
+                "Static strategies use complex algorithms, while dynamic strategies are based on intuition",
+                "Static strategies are for short-term trading, while dynamic strategies are for long-term investing",
+                "Static strategies focus on one asset class, while dynamic strategies diversify across multiple asset classes"
+              ]
+            },
+            {
+              "question": "What is 'risk parity' investing?",
+              "correctAnswer": "A strategy where assets are allocated based on their risk contribution rather than their capital allocation",
+              "incorrectAnswers": [
+                "A strategy that aims to achieve equal returns from all assets",
+                "A method of hedging against market volatility",
+                "An approach that only invests in low-risk assets"
+              ]
+            },
+            {
+              "question": "According to the chapter, what is the most overlooked characteristic of a strategy's returns?",
+              "correctAnswer": "The expected skew of a strategy's returns",
+              "incorrectAnswers": [
+                "The average return of the strategy",
+                "The volatility of the returns",
+                "The correlation with other strategies"
+              ]
+            },
+            {
+              "question": "What is the 'Law of active management' and how does it relate to diversification?",
+              "correctAnswer": "It shows that diversification is the best source of additional risk-adjusted returns, suggesting traders should hold more positions when possible",
+              "incorrectAnswers": [
+                "It states that active management always outperforms passive investing",
+                "It proves that concentrated portfolios yield higher returns",
+                "It demonstrates that frequent trading leads to better performance"
+              ]
+            },
+            {
+              "question": "Why does the author advise against trading instruments with very low volatility?",
+              "correctAnswer": "Because they often require high leverage to achieve desired returns, which can be dangerous",
+              "incorrectAnswers": [
+                "Because they don't provide enough trading opportunities",
+                "Because they are too difficult to analyze",
+                "Because they are always overpriced"
+              ]
+            },
+            {
+              "question": "What type of skew do mean reversion and relative value traders typically experience?",
+              "correctAnswer": "Negative skew - many small profits with occasional large losses",
+              "incorrectAnswers": [
+                "Positive skew - many small losses with occasional large gains",
+                "No skew - perfectly symmetrical returns",
+                "Variable skew - constantly changing between positive and negative"
+              ]
+            },
+            {
+              "question": "What is a 'crowded trade' and why is it potentially dangerous?",
+              "correctAnswer": "A trade where many traders hold the same position, dangerous because mass liquidation can lead to severe losses if the trade goes wrong",
+              "incorrectAnswers": [
+                "A trade that requires multiple traders to execute, risky due to coordination issues",
+                "A trade in a highly liquid market, dangerous due to high volatility",
+                "A trade based on widely known information, risky because the profit potential is limited"
+              ]
+            },
+            {
+              "question": "What range of Sharpe ratios does the author suggest is realistic for well-diversified dynamic trading strategies?",
+              "correctAnswer": "Around 0.8 for well-diversified dynamic trading strategies across multiple assets",
+              "incorrectAnswers": [
+                "Between 2.0 and 3.0 for any trading strategy",
+                "Less than 0.2 for dynamic strategies",
+                "Above 1.5 for strategies focusing on a single asset class"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Fitting",
+      "quizzes": [
+        {
+          "name": "Sample Quiz 1 - Claude-3.5-Sonnet",
+          "questions": [
+            {
+              "question": "What is the process of selecting one or more trading rules and discarding others called?",
+              "correctAnswer": "Fitting",
+              "incorrectAnswers": [
+                "Calibration",
+                "Backtesting",
+                "Optimization"
+              ]
+            },
+            {
+              "question": "What is the main concern when fitting trading rules?",
+              "correctAnswer": "Over-fitting",
+              "incorrectAnswers": [
+                "Under-fitting",
+                "Curve-fitting",
+                "Data-fitting"
+              ]
+            },
+            {
+              "question": "What is the author's preferred method for backtesting?",
+              "correctAnswer": "Expanding window",
+              "incorrectAnswers": [
+                "In-sample testing",
+                "Fixed window",
+                "Single period testing"
+              ]
+            },
+            {
+              "question": "What is the downside of using an expanding window for backtesting?",
+              "correctAnswer": "It may use irrelevant past data if the world changes",
+              "incorrectAnswers": [
+                "It wastes half of the data",
+                "It only looks at five years of performance",
+                "It's too computationally expensive"
+              ]
+            },
+            {
+              "question": "What is the average Sharpe ratio for a typical trading rule on one instrument, according to the author?",
+              "correctAnswer": "0.3",
+              "incorrectAnswers": [
+                "0.5",
+                "0.7",
+                "1.0"
+              ]
+            },
+            {
+              "question": "How many years of history are needed to pass the T-Test for a trading rule with a true Sharpe ratio of 0.3?",
+              "correctAnswer": "37 years",
+              "incorrectAnswers": [
+                "20 years",
+                "45 years",
+                "10 years"
+              ]
+            },
+            {
+              "question": "What is an excellent way of getting more data history for fitting?",
+              "correctAnswer": "Pooling data from multiple instruments",
+              "incorrectAnswers": [
+                "Using higher frequency data",
+                "Extrapolating existing data",
+                "Simulating additional data"
+              ]
+            },
+            {
+              "question": "What should be avoided when fitting trading rules using data?",
+              "correctAnswer": "Using time machines (looking into the future)",
+              "incorrectAnswers": [
+                "Using multiple instruments",
+                "Using the Sharpe ratio",
+                "Using rolling windows"
+              ]
+            },
+            {
+              "question": "Why is it problematic to compare rules using only the Sharpe ratio?",
+              "correctAnswer": "It can be misleading when comparing differently skewed rules",
+              "incorrectAnswers": [
+                "It doesn't account for trading costs",
+                "It's too simple to capture complex behaviors",
+                "It overestimates the performance of trend-following strategies"
+              ]
+            },
+            {
+              "question": "What does the author recommend instead of focusing on outright performance?",
+              "correctAnswer": "Returns relative to benchmarks",
+              "incorrectAnswers": [
+                "Absolute returns",
+                "Risk-adjusted returns",
+                "Maximum drawdown"
+              ]
+            },
+            {
+              "question": "How many rules does the author have in his portfolio?",
+              "correctAnswer": "About eight",
+              "incorrectAnswers": [
+                "About twenty",
+                "About fifty",
+                "About three"
+              ]
+            },
+            {
+              "question": "What two types of rules does the author recommend for beginners?",
+              "correctAnswer": "Trend following and Carry",
+              "incorrectAnswers": [
+                "Momentum and Mean reversion",
+                "Value and Growth",
+                "Volatility and Liquidity"
+              ]
+            },
+            {
+              "question": "What is the main reason for having a small number of trading rules?",
+              "correctAnswer": "Less risk of over-fitting",
+              "incorrectAnswers": [
+                "Easier to implement",
+                "Lower trading costs",
+                "Higher overall returns"
+              ]
+            },
+            {
+              "question": "What is generally higher: the correlation between different rules trading a particular instrument or between instruments trading the same rule?",
+              "correctAnswer": "The correlation between different rules trading a particular instrument",
+              "incorrectAnswers": [
+                "The correlation between instruments trading the same rule",
+                "They are typically equal",
+                "It depends on the specific rules and instruments"
+              ]
+            },
+            {
+              "question": "At what correlation level does the author suggest dropping one of two variations?",
+              "correctAnswer": "More than 95% correlation",
+              "incorrectAnswers": [
+                "More than 80% correlation",
+                "More than 50% correlation",
+                "More than 99% correlation"
+              ]
+            },
+            {
+              "question": "What does the author recommend using returns data for, instead of fitting rules?",
+              "correctAnswer": "Calculating forecast weights",
+              "incorrectAnswers": [
+                "Selecting the best-performing rules",
+                "Optimizing trading parameters",
+                "Determining the optimal number of rules"
+              ]
+            },
+            {
+              "question": "What type of backtesting should be avoided according to the chapter?",
+              "correctAnswer": "In-sample backtesting",
+              "incorrectAnswers": [
+                "Out-of-sample backtesting",
+                "Rolling window backtesting",
+                "Expanding window backtesting"
+              ]
+            },
+            {
+              "question": "What is the main disadvantage of splitting data into fitting and testing periods?",
+              "correctAnswer": "Wasting half of the data",
+              "incorrectAnswers": [
+                "Increased computational complexity",
+                "Inability to capture market changes",
+                "Overestimation of performance"
+              ]
+            },
+            {
+              "question": "According to the author, what is rarely necessary when fitting rules?",
+              "correctAnswer": "Fitting rules individually for each instrument",
+              "incorrectAnswers": [
+                "Pooling data across instruments",
+                "Using multiple variations of each rule",
+                "Comparing rules using the Sharpe ratio"
+              ]
+            },
+            {
+              "question": "What does the author suggest looking at when selecting variations, instead of performance?",
+              "correctAnswer": "Behavior (e.g., trading speed and correlation with other variations)",
+              "incorrectAnswers": [
+                "Historical returns",
+                "Maximum drawdown",
+                "Profit factor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Portfolio Allocation",
+      "quizzes": [
+        {
+          "name": "Sample Quiz 1 - Claude-3.5-Sonnet",
+          "questions": [
+            {
+              "question": "What is the main risk of optimising portfolio weights?",
+              "correctAnswer": "Over-fitting",
+              "incorrectAnswers": [
+                "Under-fitting",
+                "Volatility increase",
+                "Correlation decrease"
+              ]
+            },
+            {
+              "question": "What are the inputs typically used for portfolio optimisation?",
+              "correctAnswer": "Expected returns, standard deviation of returns, and correlations",
+              "incorrectAnswers": [
+                "Only expected returns",
+                "Only standard deviation of returns",
+                "Only correlations"
+              ]
+            },
+            {
+              "question": "Who first introduced the standard method for portfolio optimisation in the 1950s?",
+              "correctAnswer": "Harry Markowitz",
+              "incorrectAnswers": [
+                "John Bogle",
+                "Eugene Fama",
+                "William Sharpe"
+              ]
+            },
+            {
+              "question": "What are the two types of weights mentioned in the context of trading systems?",
+              "correctAnswer": "Forecast weights and instrument weights",
+              "incorrectAnswers": [
+                "Asset weights and liability weights",
+                "Long weights and short weights",
+                "Risk weights and return weights"
+              ]
+            },
+            {
+              "question": "What technique simplifies the problem of portfolio optimisation in the proposed framework?",
+              "correctAnswer": "Volatility standardisation",
+              "incorrectAnswers": [
+                "Correlation maximization",
+                "Return optimization",
+                "Risk parity"
+              ]
+            },
+            {
+              "question": "According to the text, what type of weights are hard to beat?",
+              "correctAnswer": "Equal weights",
+              "incorrectAnswers": [
+                "Optimized weights",
+                "Risk-adjusted weights",
+                "Market cap weights"
+              ]
+            },
+            {
+              "question": "When do equal weights make sense in a portfolio?",
+              "correctAnswer": "When assets have the same volatility, Sharpe ratio, and correlation",
+              "incorrectAnswers": [
+                "When assets have different volatilities",
+                "When assets have different Sharpe ratios",
+                "When assets have negative correlations"
+              ]
+            },
+            {
+              "question": "What technique does the author use to 'fix' the problem of portfolio optimisation?",
+              "correctAnswer": "Bootstrapping",
+              "incorrectAnswers": [
+                "Monte Carlo simulation",
+                "Genetic algorithms",
+                "Neural networks"
+              ]
+            },
+            {
+              "question": "What is an advantage of bootstrapping over classic optimisation?",
+              "correctAnswer": "It's less likely to produce extreme weights",
+              "incorrectAnswers": [
+                "It always produces higher returns",
+                "It eliminates all risk",
+                "It requires less computational power"
+              ]
+            },
+            {
+              "question": "What is the first step in the handcrafting method for portfolio construction?",
+              "correctAnswer": "Forming groups of similar assets",
+              "incorrectAnswers": [
+                "Calculating Sharpe ratios",
+                "Optimizing returns",
+                "Minimizing volatility"
+              ]
+            },
+            {
+              "question": "What assumption does the basic handcrafting method make about asset Sharpe ratios?",
+              "correctAnswer": "They are all the same",
+              "incorrectAnswers": [
+                "They are all different",
+                "They are always positive",
+                "They are always negative"
+              ]
+            },
+            {
+              "question": "How many assets should ideally be in a group when using the handcrafting method?",
+              "correctAnswer": "One, two, or three",
+              "incorrectAnswers": [
+                "Five to ten",
+                "More than ten",
+                "Always one"
+              ]
+            },
+            {
+              "question": "What should be done with negative correlation values in the handcrafting method?",
+              "correctAnswer": "Floor them at zero",
+              "incorrectAnswers": [
+                "Use them as is",
+                "Convert them to positive values",
+                "Ignore them completely"
+              ]
+            },
+            {
+              "question": "Why is the handcrafting method unsuitable for an expanding or rolling out of sample backtest?",
+              "correctAnswer": "It cannot easily be repeated automatically in multiple years",
+              "incorrectAnswers": [
+                "It always produces biased results",
+                "It requires too much computational power",
+                "It only works with a fixed set of assets"
+              ]
+            },
+            {
+              "question": "What is a valid reason to have an opinion about relative asset Sharpe ratios?",
+              "correctAnswer": "When assets have different costs",
+              "incorrectAnswers": [
+                "When assets are from different countries",
+                "When assets are in different currencies",
+                "When assets have different market capitalizations"
+              ]
+            },
+            {
+              "question": "What is the first step in adjusting handcrafted weights for Sharpe ratio?",
+              "correctAnswer": "Work out the handcraft weights for the group",
+              "incorrectAnswers": [
+                "Calculate the Sharpe ratios",
+                "Determine the multipliers",
+                "Normalize the weights"
+              ]
+            },
+            {
+              "question": "How many columns are there in the table used to find weight multipliers when adjusting for Sharpe ratios?",
+              "correctAnswer": "3",
+              "incorrectAnswers": [
+                "2",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "question": "What should be done if the resulting weights in a group don't add up to 100% after adjusting for Sharpe ratios?",
+              "correctAnswer": "Normalize them",
+              "incorrectAnswers": [
+                "Leave them as is",
+                "Round them to the nearest whole number",
+                "Discard the lowest weight"
+              ]
+            },
+            {
+              "question": "Why is using Sharpe ratios to produce handcrafted weights considered a form of in-sample backtest cheating?",
+              "correctAnswer": "It uses final Sharpe ratios averaged over all data history",
+              "incorrectAnswers": [
+                "It always produces unrealistic returns",
+                "It ignores correlation between assets",
+                "It overestimates volatility"
+              ]
+            },
+            {
+              "question": "What does the author suggest using to adjust expectations when using Sharpe ratios in handcrafted weights?",
+              "correctAnswer": "A pessimism factor",
+              "incorrectAnswers": [
+                "An optimism multiplier",
+                "A risk-adjustment coefficient",
+                "A volatility dampener"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

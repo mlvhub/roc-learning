@@ -9,7 +9,7 @@ import pg.Pg.Client
 import pg.Pg.Cmd
 
 main =
-    Pg.Cmd.new "select name, price from products"
+    Pg.Cmd.new "select id, name from products"
     |> runDb
     |> Stdout.line!
 
