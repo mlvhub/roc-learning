@@ -9,7 +9,6 @@ import pf.Stdout
 import pf.Stderr
 import pf.Task exposing [Task]
 import pf.Http exposing [Request, Response]
-import pf.Command
 import pf.Env
 import pf.Url
 import pf.Utc
@@ -50,7 +49,8 @@ routeBooks = \req ->
     when req.method is
         Get ->
             Stdout.line! "Get"
-            listBooks
+            books = queryBooks!
+            listBooks books
         _ ->
             Stdout.line! "Other"
             Task.ok {
@@ -59,24 +59,21 @@ routeBooks = \req ->
                 body: Str.toUtf8 "Method Not Allowed",
             }
     
-listBooks : Task Response []_
-listBooks =
+listBooks : List Book -> Task Response []_
+listBooks = \books ->
     Stdout.line! "listBooks"
     view = Html.div [] [
-        Html.h1 [] [Html.text "Books"]
+        Html.h1 [] [Html.text "Books"],
+        Html.div [] (List.map books (\book -> Html.div [] [Html.text "$(book.id) $(book.name)"]))
     ]
     htmlResponse view
-
-AppError : [
-    EnvVarNotSet Str,
-]
 
 Book : {
     id: Str,
     name: Str,
 }
 
-queryBooks : Task (List Book) []_
+queryBooks : Task (List Book) [PgErr _]_
 queryBooks =
     Stdout.line! "queryBooks"
     Pg.Cmd.new "SELECT id, name FROM grokkr.books"
@@ -87,6 +84,7 @@ queryBooks =
         }
     ) 
     |> runDb
+    |> Task.mapErr PgErr
 
 runDb : Pg.Cmd.Cmd a err -> Task a _
 runDb = \cmd ->
@@ -125,12 +123,13 @@ logRequest = \req ->
 
     Stdout.line "$(datetime) $(Http.methodToStr req.method) $(req.url)"
 
-handleErr : AppError -> Task Response _
-handleErr = \appErr ->
+handleErr : _ -> Task Response _
+handleErr = \err ->
     # Build error message
     errMsg =
-        when appErr is
+        when err is
             EnvVarNotSet varName -> "Environment variable \"$(varName)\" was not set. Please set it to the path of todos.db"
+            PgErr _ -> "PgErr"
     # Log error to stderr
     Stderr.line! "Internal Server Error:\n\t$(errMsg)"
     _ <- Stderr.flush |> Task.attempt
